@@ -1,0 +1,14 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://crnqdxa1xgkgt"]
+
+[sub_resource type="SystemFont" id="SystemFont_wq8nf"]
+font_names = PackedStringArray("Almendra")
+
+[resource]
+font = SubResource("SystemFont_wq8nf")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_offset = Vector2(-0.23, 0.215)

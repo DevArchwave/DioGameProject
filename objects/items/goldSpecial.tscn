@@ -1,0 +1,94 @@
+[gd_scene load_steps=14 format=3 uid="uid://6idxs0t11jl1"]
+
+[ext_resource type="Texture2D" uid="uid://ccoe3id828qos" path="res://addons/Tiny Swords (Update 010)/Resources/Resources/G_Spawn.png" id="1_me0gk"]
+[ext_resource type="Material" uid="uid://dehs8bejhid5x" path="res://objects/items/Special.tres" id="1_p8s1j"]
+[ext_resource type="Script" path="res://scripts/goldPickup.gd" id="2_76j1r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3io6"]
+atlas = ExtResource("1_me0gk")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru0fl"]
+atlas = ExtResource("1_me0gk")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnf0a"]
+atlas = ExtResource("1_me0gk")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfek8"]
+atlas = ExtResource("1_me0gk")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3emop"]
+atlas = ExtResource("1_me0gk")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64m80"]
+atlas = ExtResource("1_me0gk")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwkij"]
+atlas = ExtResource("1_me0gk")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lnojt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3io6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru0fl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnf0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfek8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3emop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64m80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwkij")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1kmjo"]
+radius = 34.0147
+
+[sub_resource type="Environment" id="Environment_pyglb"]
+background_mode = 3
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 2.0
+glow_blend_mode = 0
+glow_hdr_scale = 0.85
+
+[node name="GoldSpecial" type="AnimatedSprite2D"]
+material = ExtResource("1_p8s1j")
+position = Vector2(0, -10)
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_lnojt")
+autoplay = "default"
+frame = 6
+frame_progress = 1.0
+offset = Vector2(0, -22)
+script = ExtResource("2_76j1r")
+goldAmount = 50
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_1kmjo")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pyglb")

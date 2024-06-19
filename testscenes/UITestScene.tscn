@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bib04w83x00at"]
+
+[ext_resource type="PackedScene" uid="uid://dbll8ucqcosi5" path="res://entities/player/player_knight.tscn" id="1_vg85b"]
+[ext_resource type="PackedScene" uid="uid://dp4bpuyr28y1d" path="res://UI/game_ui.tscn" id="2_6ygvp"]
+[ext_resource type="PackedScene" uid="uid://fx2n0rux3mbi" path="res://objects/items/gold.tscn" id="3_bphie"]
+
+[node name="UiTestScene" type="Node2D"]
+
+[node name="PlayerKnight" parent="." instance=ExtResource("1_vg85b")]
+position = Vector2(311, 210)
+
+[node name="GameUI" parent="." instance=ExtResource("2_6ygvp")]
+
+[node name="Gold" parent="." instance=ExtResource("3_bphie")]
+position = Vector2(557, 199)

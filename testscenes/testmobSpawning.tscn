@@ -1,0 +1,17 @@
+[gd_scene load_steps=7 format=3 uid="uid://6ld00ks4mmfs"]
+
+[ext_resource type="PackedScene" uid="uid://dbll8ucqcosi5" path="res://entities/player/player_knight.tscn" id="1_kmwo4"]
+[ext_resource type="PackedScene" uid="uid://3c5tdup2ijx" path="res://entities/mob_spawner.tscn" id="2_k00ug"]
+[ext_resource type="PackedScene" uid="uid://ciab1455icofx" path="res://entities/enemies/sheep.tscn" id="3_4gpkp"]
+[ext_resource type="PackedScene" uid="uid://d3pk7charmg7m" path="res://entities/enemies/pawn.tscn" id="4_n4f1u"]
+[ext_resource type="PackedScene" uid="uid://bbechb034sg5f" path="res://entities/enemies/explosiveThrower.tscn" id="5_5l46p"]
+[ext_resource type="PackedScene" uid="uid://bxyda82m75nfj" path="res://entities/enemies/goblin.tscn" id="6_uhbeq"]
+
+[node name="TestMobSpawning" type="Node2D"]
+
+[node name="PlayerKnight" parent="." instance=ExtResource("1_kmwo4")]
+position = Vector2(555, 365)
+swordDamage = 3
+
+[node name="MobSpawner" parent="." instance=ExtResource("2_k00ug")]
+creatureList = Array[PackedScene]([ExtResource("3_4gpkp"), ExtResource("4_n4f1u"), ExtResource("5_5l46p"), ExtResource("6_uhbeq")])

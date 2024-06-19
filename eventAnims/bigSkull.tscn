@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bffiu5isc5gqg"]
+
+[ext_resource type="PackedScene" uid="uid://fjvtyjx8er5h" path="res://eventAnims/enemyDeathAnim.tscn" id="1_orw3w"]
+
+[node name="EnemyDeathAnim" instance=ExtResource("1_orw3w")]
+scale = Vector2(2, 2)

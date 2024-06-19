@@ -1,0 +1,32 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://b4mlgbtonwsmv"]
+
+[ext_resource type="Shader" path="res://gamescenes/Water.gdshader" id="1_1fgcc"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_uapgg"]
+noise_type = 4
+seed = 3
+frequency = 0.015
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lfp4p"]
+seamless = true
+noise = SubResource("FastNoiseLite_uapgg")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cr23a"]
+seed = 5
+frequency = 0.015
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4btps"]
+seamless = true
+noise = SubResource("FastNoiseLite_cr23a")
+
+[resource]
+shader = ExtResource("1_1fgcc")
+shader_parameter/scroll1 = Vector2(0.025, 0.025)
+shader_parameter/scroll2 = Vector2(-0.025, -0.025)
+shader_parameter/distortion_strength = 0.03
+shader_parameter/tone_color = Color(0.479397, 0.79014, 0.920577, 1)
+shader_parameter/top_color = Color(0.288518, 0.288518, 0.288517, 1)
+shader_parameter/light_start = 0.3
+shader_parameter/light_end = 0.6
+shader_parameter/noise1 = SubResource("NoiseTexture2D_lfp4p")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_4btps")
